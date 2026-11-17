@@ -18,12 +18,13 @@
             <h2 class="titulos admin-titulo">Acesso Restrito</h2>
             <form id="form-login">
                 <div class="form-group">
-                    <label for="admin-user">Usuário:</label>
-                    <input type="text" id="admin-user" autocomplete="username" required placeholder="Digite o usuário">
+                    <label for="admin-repo">Repositório do site no GitHub:</label>
+                    <input type="text" id="admin-repo" required placeholder="usuario/nome-do-repositorio" autocomplete="off" spellcheck="false">
                 </div>
                 <div class="form-group">
-                    <label for="admin-pass">Senha:</label>
-                    <input type="password" id="admin-pass" autocomplete="current-password" required placeholder="Digite a senha">
+                    <label for="admin-token">Token de acesso:</label>
+                    <input type="password" id="admin-token" required placeholder="github_pat_..." autocomplete="off">
+                    <p class="dica-campo">O token é a chave do painel: só quem o possui consegue publicar alterações. Ele fica apenas na memória desta aba e é descartado ao sair ou recarregar a página.</p>
                 </div>
                 <div class="admin-acoes">
                     <button type="submit" class="btn-salvar">Entrar no Painel</button>
@@ -49,8 +50,12 @@
                     <input type="text" id="edit-email" placeholder="exemplo@email.com">
                 </div>
                 <div class="form-group">
-                    <label for="edit-redes">Redes Sociais:</label>
-                    <input type="text" id="edit-redes" placeholder="/rtpantanalpaulista">
+                    <label for="edit-instagram">Instagram (usuário):</label>
+                    <input type="text" id="edit-instagram" placeholder="rtpantanal" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="edit-facebook">Facebook (página):</label>
+                    <input type="text" id="edit-facebook" placeholder="rtpantanalpaulista" autocomplete="off">
                 </div>
 
                 <h3 class="admin-subtitulo--espaco">Editar Texto das Cidades</h3>
@@ -76,7 +81,7 @@
                 <div class="form-group">
                     <label for="edit-cidade-desc">Texto Completo da Cidade:</label>
                     <textarea id="edit-cidade-desc"></textarea>
-                    <p class="dica-campo">* O texto atual da cidade selecionada está carregado acima para edição.</p>
+                    <p class="dica-campo">Separe os parágrafos com uma linha em branco. Apagar todo o texto restaura o texto original da página.</p>
                 </div>
 
                 <div class="admin-acoes">
@@ -87,6 +92,7 @@
             </form>
 
             <div id="edit-sucesso" class="mensagem mensagem--sucesso" role="status"></div>
+            <div id="edit-erro" class="mensagem mensagem--erro" role="alert"></div>
         </div>
     </div>
 
