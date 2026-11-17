@@ -1,6 +1,9 @@
 {
   "contato": {
-    "telefone": "(18) 11111-1111"
+    "telefone": "(18) 00000-0000",
+    "email": "exemplo@email.com",
+    "instagram": "@rtpantanal",
+    "facebook": "@rtpantanalpaulista"
   },
   "cidades": {}
 }
