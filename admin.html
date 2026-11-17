@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Pantanal Paulista</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="javaScript.js" defer></script>
+</head>
+<body class="pagina-admin">
+
+    <div class="admin-card">
+        <!-- LOGIN -->
+        <div id="box-login">
+            <h2 class="titulos admin-titulo">Acesso Restrito</h2>
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="admin-user">Usuário:</label>
+                    <input type="text" id="admin-user" autocomplete="username" required placeholder="Digite o usuário">
+                </div>
+                <div class="form-group">
+                    <label for="admin-pass">Senha:</label>
+                    <input type="password" id="admin-pass" autocomplete="current-password" required placeholder="Digite a senha">
+                </div>
+                <div class="admin-acoes">
+                    <button type="submit" class="btn-salvar">Entrar no Painel</button>
+                    <a href="index.html" class="btn-salvar btn-salvar--neutro btn-voltar-site">Acessar o site</a>
+                </div>
+            </form>
+            <div id="login-erro" class="mensagem mensagem--erro" role="alert"></div>
+        </div>
+
+        <!-- PAINEL DE EDIÇÃO -->
+        <div id="box-painel" class="oculto">
+            <h2 class="titulos admin-titulo">Edição de Conteúdo</h2>
+            
+            <form id="form-edicao">
+                <h3>Contatos da Região Turística</h3>
+                <hr>
+                <div class="form-group">
+                    <label for="edit-telefone">Telefone de Contato:</label>
+                    <input type="text" id="edit-telefone" placeholder="(18) 00000-0000">
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">E-mail de Contato:</label>
+                    <input type="text" id="edit-email" placeholder="exemplo@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="edit-redes">Redes Sociais:</label>
+                    <input type="text" id="edit-redes" placeholder="/rtpantanalpaulista">
+                </div>
+
+                <h3 class="admin-subtitulo--espaco">Editar Texto das Cidades</h3>
+                <hr>
+                <div class="form-group">
+                    <label for="select-cidade">Selecione o Município:</label>
+                    <select id="select-cidade">
+                        <option value="andradina">Andradina</option>
+                        <option value="castilho">Castilho</option>
+                        <option value="guaracai">Guaraçaí</option>
+                        <option value="ilha-solteira">Ilha Solteira</option>
+                        <option value="itapura">Itapura</option>
+                        <option value="mirandopolis">Mirandópolis</option>
+                        <option value="murutinga">Murutinga do Sul</option>
+                        <option value="nova-independencia">Nova Independência</option>
+                        <option value="pereira-barreto">Pereira Barreto</option>
+                        <option value="sud-mennucci">Sud Mennucci</option>
+                        <option value="suzanapolis">Suzanápolis</option>
+                        <option value="valparaiso">Valparaíso</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-cidade-desc">Texto Completo da Cidade:</label>
+                    <textarea id="edit-cidade-desc"></textarea>
+                    <p class="dica-campo">* O texto atual da cidade selecionada está carregado acima para edição.</p>
+                </div>
+
+                <div class="admin-acoes">
+                    <button type="submit" class="btn-salvar">Salvar Alterações</button>
+                    <button type="button" id="btn-logout" class="btn-salvar btn-salvar--neutro">Sair</button>
+                    <a href="index.html" class="btn-salvar btn-salvar--neutro btn-voltar-site">Ir para o Site</a>
+                </div>
+            </form>
+
+            <div id="edit-sucesso" class="mensagem mensagem--sucesso" role="status"></div>
+        </div>
+    </div>
+
+</body>
+</html>
