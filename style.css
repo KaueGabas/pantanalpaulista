@@ -411,7 +411,7 @@ button:focus-visible {
 
 .chamadas__grade {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -438,6 +438,14 @@ button:focus-visible {
 }
 
 .chamada--laranja .chamada__icone { color: var(--laranja); }
+
+@media (max-width: 600px) {
+    .chamadas { padding: 30px 16px 40px; }
+    .chamadas__grade { gap: 20px; }
+    .chamada { padding: 28px 20px; }
+    .chamada__icone { font-size: 46px; }
+    .chamada__titulo { font-size: 1.5rem; }
+}
 
 .chamada__titulo {
     margin-bottom: 12px;
@@ -1128,8 +1136,18 @@ section.eventos {
 @media (max-width: 600px) {
     .site-footer__decor--top { height: 190px; }
     .site-footer__decor--bottom { height: 200px; }
-    .site-footer__main { grid-template-columns: 1fr; }
+    .site-footer__container { padding: 60px 0 20px; }
+    .site-footer__main { grid-template-columns: 1fr; gap: 28px; }
+    .site-footer__brand { gap: 12px; }
+    .site-footer__logo { width: 90px; }
+    .site-footer__brand-name { font-size: 1.4rem; }
+    .site-footer__about p { max-width: none; margin-bottom: 14px; font-size: 0.88rem; line-height: 1.6; }
+    .site-footer__col-title { margin-bottom: 12px; }
+    .site-footer__list { gap: 8px; }
     .site-footer__bottom, .site-footer__contact { flex-direction: column; align-items: flex-start; }
+    .site-footer__bottom { gap: 16px; margin-top: 32px; padding-top: 20px; }
+    .site-footer__contact { gap: 14px; }
+    .site-footer__contact-icon { width: 36px; height: 36px; font-size: 20px; }
 }
 
 /* ==========================================================================
@@ -1157,6 +1175,19 @@ section.eventos {
     margin: 12px auto;
     font-size: 1.15rem;
     line-height: 1.6;
+}
+
+/* ===== Cabeçalho das páginas internas (marca + botão Voltar) ===== */
+@media (max-width: 820px) {
+    .site-header__container--interna { flex-wrap: nowrap; gap: 12px; }
+    .site-header__container--interna .site-header__brand { min-width: 0; }
+    .site-header__container--interna .card-botao { flex: none; }
+}
+
+@media (max-width: 520px) {
+    .site-header__container--interna .site-header__brand { gap: 8px; font-size: 1.05rem; }
+    .site-header__container--interna .card-botao { padding: 8px 14px; }
+    .card-botao__prefixo { display: none; }
 }
 
 /* ===== Filtro de cidades ===== */
