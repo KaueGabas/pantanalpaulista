@@ -2,12 +2,14 @@
    JAVASCRIPT.JS - COMPORTAMENTOS DO SITE
    1) Cabeçalho e menu   2) Carrossel de eventos
    3) Filtro de cidades  4) Ano do rodapé
-   5) Conteúdo editável (dados.json)  6) Painel administrativo
+   5) Contatos (dados.json)   6) Detalhes das cidades (cidades.json)
+   7) Painel administrativo
    ========================================================================== */
 
 /* ===== CONFIGURAÇÃO ===== */
-// Arquivo (na raiz do repositório) onde o painel salva o conteúdo editável.
-const ARQUIVO_DADOS = "dados.json";
+// Arquivos (na raiz do repositório) onde o painel salva o conteúdo editável.
+const ARQUIVO_DADOS = "dados.json"; // contatos do rodapé
+const ARQUIVO_CIDADES = "cidades.json"; // conteúdo das 12 cidades
 // Opcional: preencha "usuario/repositorio" para o painel já vir preenchido.
 const REPOSITORIO_PADRAO = "";
 
@@ -302,6 +304,10 @@ const REPOSITORIO_PADRAO = "";
         });
     }
 
+    document.addEventListener("cidades:prontas", function () {
+        itens = null;
+    });
+
     campo.addEventListener("input", function () {
         if (!itens) montarIndice();
         const termo = normalizar(campo.value);
@@ -323,10 +329,9 @@ const REPOSITORIO_PADRAO = "";
     if (ano) ano.textContent = new Date().getFullYear();
 })();
 
-/* ===== 5) CONTEÚDO EDITÁVEL (dados.json) =====
-   Aplica em todas as páginas o que foi salvo pelo painel administrativo.
-   Se o arquivo não existir (ou a página for aberta direto do disco), o
-   conteúdo original do HTML continua valendo. */
+/* ===== 5) CONTEÚDO EDITÁVEL: CONTATOS (dados.json) =====
+   Aplica em todas as páginas o telefone, e-mail e redes sociais salvos pelo
+   painel. Sem o arquivo (ou abrindo a página direto do disco), vale o HTML. */
 (function () {
     "use strict";
 
@@ -357,44 +362,201 @@ const REPOSITORIO_PADRAO = "";
         });
     }
 
-    function aplicarCidades(cidades) {
-        Object.keys(cidades).forEach(function (slug) {
-            const detalhe = document.getElementById("detalhe-" + slug);
-            const alvo = detalhe && detalhe.querySelector(".cidade__sobre .info-descricao");
-            if (!alvo || typeof cidades[slug] !== "string") return;
-
-            const paragrafos = cidades[slug].split(/\n{2,}/).map(function (p) {
-                return p.trim();
-            }).filter(Boolean);
-            if (!paragrafos.length) return;
-
-            alvo.textContent = "";
-            paragrafos.forEach(function (texto) {
-                const p = document.createElement("p");
-                p.textContent = texto;
-                alvo.appendChild(p);
-            });
-        });
-    }
-
     fetch(ARQUIVO_DADOS, { cache: "no-cache" })
         .then(function (resposta) {
             return resposta.ok ? resposta.json() : null;
         })
         .then(function (dados) {
-            if (!dados) return;
-            aplicarContato(dados.contato || {});
-            aplicarCidades(dados.cidades || {});
+            if (dados) aplicarContato(dados.contato || {});
         })
         .catch(function () {
             /* sem dados.json: mantém o conteúdo original */
         });
 })();
 
-/* ===== 6) PAINEL ADMINISTRATIVO (admin.html) =====
-   Não há servidor nem banco de dados: o painel grava o arquivo dados.json
-   direto no repositório do GitHub, usando a API do GitHub com um token de
-   acesso. Cada salvamento vira um commit; o GitHub Pages republica o site. */
+/* ===== 6) DETALHES DAS CIDADES (cidades.html) =====
+   Todo o conteúdo das cidades vem de cidades.json, com a mesma estrutura para
+   as 12: nome, slogan, descrição, dados rápidos, destaques (com descrição e
+   detalhes opcionais), informações, contato e mapa. */
+(function () {
+    "use strict";
+
+    const area = document.getElementById("mapas");
+    if (!area) return;
+
+    const REGEX_EMAIL = /^[\w.+-]+@[\w-]+(\.[\w-]+)+$/;
+    const REGEX_SITE = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/\S*)?$/i;
+
+    function el(tag, classe, texto) {
+        const e = document.createElement(tag);
+        if (classe) e.className = classe;
+        if (texto) e.textContent = texto;
+        return e;
+    }
+
+    function paragrafos(texto) {
+        return String(texto || "").split(/\n{2,}/).map(function (p) {
+            return p.trim();
+        }).filter(Boolean);
+    }
+
+    // E-mails e endereços de site viram links; o restante continua texto.
+    function valorComLink(valor) {
+        const texto = String(valor || "").trim();
+        if (REGEX_EMAIL.test(texto)) {
+            const a = el("a", "", texto);
+            a.href = "mailto:" + texto;
+            return a;
+        }
+        if (REGEX_SITE.test(texto)) {
+            const a = el("a", "", texto);
+            a.href = /^https?:/i.test(texto) ? texto : "https://" + texto;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            return a;
+        }
+        return document.createTextNode(texto);
+    }
+
+    // Linhas "Rótulo: valor" separadas por quebra de linha
+    function linhasRotuloValor(classe, itens) {
+        const p = el("p", classe);
+        itens.forEach(function (item, i) {
+            if (i) p.appendChild(document.createElement("br"));
+            if (item.rotulo) {
+                p.appendChild(el("strong", "", item.rotulo + ":"));
+                p.appendChild(document.createTextNode(" "));
+            }
+            p.appendChild(valorComLink(item.valor));
+        });
+        return p;
+    }
+
+    function bloco(classe, titulo) {
+        const b = el("div", "vidro " + classe);
+        b.appendChild(el("div", "info-subtitulo", titulo));
+        return b;
+    }
+
+    function blocoSobre(c) {
+        const b = bloco("cidade__sobre", c.slogan || c.nome);
+        const desc = el("div", "info-descricao");
+        paragrafos(c.descricao).forEach(function (texto) {
+            desc.appendChild(el("p", "", texto));
+        });
+        b.appendChild(desc);
+        return b;
+    }
+
+    function blocoDados(itens) {
+        const b = el("div", "vidro cidade__dados");
+        const dl = el("dl", "info-dados");
+        itens.forEach(function (item) {
+            const linha = el("div", "info-dado");
+            linha.appendChild(el("dt", "info-dado-titulo", item.rotulo));
+            linha.appendChild(el("dd", "info-dado-valor", item.valor));
+            dl.appendChild(linha);
+        });
+        b.appendChild(dl);
+        return b;
+    }
+
+    function itemDestaque(d) {
+        const li = el("li");
+        const textos = paragrafos(d.descricao);
+        const detalhes = d.detalhes || [];
+        if (!textos.length && !detalhes.length) {
+            li.textContent = d.nome;
+            return li;
+        }
+        const det = el("details", "atrativo");
+        det.appendChild(el("summary", "atrativo__nome", d.nome));
+        const corpo = el("div", "atrativo__corpo");
+        textos.forEach(function (texto) {
+            corpo.appendChild(el("p", "", texto));
+        });
+        if (detalhes.length) corpo.appendChild(linhasRotuloValor("atrativo__detalhes", detalhes));
+        det.appendChild(corpo);
+        li.appendChild(det);
+        return li;
+    }
+
+    function blocoDestaques(itens) {
+        const b = bloco("cidade__atracoes", "Destaques e Visitas");
+        const ul = el("ul", "info-lista");
+        itens.forEach(function (d) {
+            ul.appendChild(itemDestaque(d));
+        });
+        b.appendChild(ul);
+        return b;
+    }
+
+    function blocoInformacoes(c) {
+        const b = bloco("cidade__acesso", "Informações");
+        const desc = el("div", "info-descricao");
+        paragrafos(c.informacoes).forEach(function (texto) {
+            desc.appendChild(el("p", "", texto));
+        });
+        if (c.contato && c.contato.length) desc.appendChild(linhasRotuloValor("info-contato", c.contato));
+        b.appendChild(desc);
+        return b;
+    }
+
+    function blocoMapa(local) {
+        const b = bloco("cidade__mapa", "Localização no Mapa");
+        const iframe = el("iframe");
+        iframe.src = "https://www.google.com/maps?q=" + encodeURIComponent(local) + "&output=embed";
+        iframe.loading = "lazy";
+        iframe.title = "Mapa: " + local;
+        iframe.setAttribute("allowfullscreen", "");
+        b.appendChild(iframe);
+        return b;
+    }
+
+    function montarCidade(alvo, c) {
+        alvo.textContent = "";
+        alvo.appendChild(el("h2", "mapa-titulo", c.nome));
+
+        const grade = el("div", "cidade__grade");
+        grade.appendChild(blocoSobre(c));
+        if (c.dados && c.dados.length) grade.appendChild(blocoDados(c.dados));
+        if (c.destaques && c.destaques.length) grade.appendChild(blocoDestaques(c.destaques));
+        if (paragrafos(c.informacoes).length || (c.contato && c.contato.length)) grade.appendChild(blocoInformacoes(c));
+        alvo.appendChild(grade);
+
+        if (c.mapa) alvo.appendChild(blocoMapa(c.mapa));
+
+        const voltar = el("a", "card-botao cidade__voltar", "← Voltar às cidades");
+        voltar.href = "#cidades";
+        alvo.appendChild(voltar);
+    }
+
+    fetch(ARQUIVO_CIDADES, { cache: "no-cache" })
+        .then(function (resposta) {
+            if (!resposta.ok) throw new Error("HTTP " + resposta.status);
+            return resposta.json();
+        })
+        .then(function (dados) {
+            Object.keys(dados.cidades || {}).forEach(function (slug) {
+                const alvo = document.getElementById("detalhe-" + slug);
+                if (alvo) montarCidade(alvo, dados.cidades[slug]);
+            });
+            document.dispatchEvent(new CustomEvent("cidades:prontas"));
+            // quem chegou por um link direto (#detalhe-...) já estava posicionado antes do conteúdo existir
+            const destino = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+            if (destino && area.contains(destino)) destino.scrollIntoView();
+        })
+        .catch(function () {
+            const aviso = el("p", "filtro__vazio", "Não foi possível carregar os detalhes das cidades. Tente novamente em instantes.");
+            area.appendChild(aviso);
+        });
+})();
+
+/* ===== 7) PAINEL ADMINISTRATIVO (admin.html) =====
+   Não há servidor nem banco de dados: o painel grava dados.json (contatos) e
+   cidades.json (conteúdo das cidades) direto no repositório do GitHub, pela API
+   do GitHub e com um token de acesso. Cada salvamento vira um commit e o GitHub
+   Pages republica o site. */
 (function () {
     "use strict";
 
@@ -408,6 +570,7 @@ const REPOSITORIO_PADRAO = "";
     };
 
     // Tudo fica só em memória (nada em localStorage/cookies); recarregar a página descarta o token.
+    // arquivos.<nome>: { sha, dados (objeto de trabalho), original (JSON salvo por último) }
     const estado = vazio();
 
     function vazio() {
@@ -415,11 +578,8 @@ const REPOSITORIO_PADRAO = "";
             repo: "",
             token: "",
             branch: "",
-            sha: null,
-            dados: { contato: {}, cidades: {} },
             cidadeAtual: "",
-            textoCarregado: "",
-            paginaCidades: null,
+            arquivos: { contato: null, cidades: null },
         };
     }
 
@@ -437,6 +597,10 @@ const REPOSITORIO_PADRAO = "";
         return new TextDecoder().decode(Uint8Array.from(binario, function (c) {
             return c.charCodeAt(0);
         }));
+    }
+
+    function serializar(objeto) {
+        return JSON.stringify(objeto, null, 2) + "\n";
     }
 
     function github(caminho, opcoes) {
@@ -461,41 +625,131 @@ const REPOSITORIO_PADRAO = "";
         campo("box-painel").classList.toggle("oculto", !logado);
     }
 
-    /* ---------- texto original das cidades (lido de cidades.html) ---------- */
-    async function textoOriginalDaCidade(slug) {
-        try {
-            if (!estado.paginaCidades) {
-                const resposta = await fetch("cidades.html", { cache: "no-cache" });
-                if (!resposta.ok) return "";
-                estado.paginaCidades = new DOMParser().parseFromString(await resposta.text(), "text/html");
-            }
-            const paragrafos = estado.paginaCidades.querySelectorAll(
-                "#detalhe-" + slug + " .cidade__sobre .info-descricao p"
-            );
-            return Array.from(paragrafos).map(function (p) {
-                return p.textContent.replace(/\s+/g, " ").trim();
-            }).join("\n\n");
-        } catch (erro) {
-            return "";
-        }
+    function el(tag, classe, texto) {
+        const e = document.createElement(tag);
+        if (classe) e.className = classe;
+        if (texto) e.textContent = texto;
+        return e;
     }
 
-    async function carregarCidade(slug) {
+    /* ---------- construtores de campos repetíveis ---------- */
+    function campoTexto(classe, valor, placeholder) {
+        const input = el("input", classe);
+        input.type = "text";
+        input.value = valor || "";
+        input.placeholder = placeholder || "";
+        input.setAttribute("aria-label", placeholder || "");
+        input.autocomplete = "off";
+        return input;
+    }
+
+    function botao(texto, classe, aoClicar) {
+        const b = el("button", "btn-salvar btn-mini " + classe, texto);
+        b.type = "button";
+        b.addEventListener("click", aoClicar);
+        return b;
+    }
+
+    function adicionarLinha(lista, par, rotuloPh, valorPh) {
+        const linha = el("div", "admin-linha");
+        linha.append(
+            campoTexto("admin-linha__rotulo", par.rotulo, rotuloPh),
+            campoTexto("admin-linha__valor", par.valor, valorPh),
+            botao("Remover", "btn-salvar--neutro", function () {
+                linha.remove();
+            })
+        );
+        lista.appendChild(linha);
+    }
+
+    function lerLinhas(lista) {
+        return Array.from(lista.querySelectorAll(":scope > .admin-linha")).map(function (linha) {
+            const campos = linha.querySelectorAll("input");
+            return { rotulo: campos[0].value.trim(), valor: campos[1].value.trim() };
+        }).filter(function (par) {
+            return par.valor;
+        });
+    }
+
+    function adicionarDestaque(destaque) {
+        const item = el("div", "admin-destaque");
+        const nome = campoTexto("admin-destaque__nome", destaque.nome, "Nome do atrativo");
+        const descricao = el("textarea", "admin-destaque__descricao");
+        descricao.value = destaque.descricao || "";
+        descricao.placeholder = "Descrição (opcional; separe parágrafos com uma linha em branco)";
+        descricao.setAttribute("aria-label", "Descrição do atrativo");
+
+        const detalhes = el("div", "admin-destaque__detalhes");
+        (destaque.detalhes || []).forEach(function (par) {
+            adicionarLinha(detalhes, par, "Rótulo (ex.: Telefone)", "Valor");
+        });
+
+        const acoes = el("div", "admin-acoes");
+        acoes.append(
+            botao("+ Detalhe (endereço, telefone, horário…)", "btn-salvar--neutro", function () {
+                adicionarLinha(detalhes, {}, "Rótulo (ex.: Telefone)", "Valor");
+            }),
+            botao("Remover atrativo", "btn-salvar--neutro", function () {
+                item.remove();
+            })
+        );
+        item.append(nome, descricao, detalhes, acoes);
+        campo("lista-destaques").appendChild(item);
+    }
+
+    function lerDestaques() {
+        return Array.from(campo("lista-destaques").querySelectorAll(":scope > .admin-destaque")).map(function (item) {
+            const destaque = { nome: item.querySelector(".admin-destaque__nome").value.trim() };
+            const descricao = item.querySelector(".admin-destaque__descricao").value.trim();
+            const detalhes = lerLinhas(item.querySelector(".admin-destaque__detalhes"));
+            if (descricao) destaque.descricao = descricao;
+            if (detalhes.length) destaque.detalhes = detalhes;
+            return destaque;
+        }).filter(function (destaque) {
+            return destaque.nome;
+        });
+    }
+
+    /* ---------- formulário da cidade ---------- */
+    function preencherCidade(slug) {
+        const cidade = estado.arquivos.cidades.dados.cidades[slug] || {};
         estado.cidadeAtual = slug;
-        const salvo = estado.dados.cidades[slug];
-        const texto = typeof salvo === "string" ? salvo : await textoOriginalDaCidade(slug);
-        estado.textoCarregado = texto;
-        campo("edit-cidade-desc").value = texto;
+
+        campo("edit-cidade-nome").value = cidade.nome || "";
+        campo("edit-cidade-slogan").value = cidade.slogan || "";
+        campo("edit-cidade-desc").value = cidade.descricao || "";
+        campo("edit-cidade-info").value = cidade.informacoes || "";
+        campo("edit-cidade-mapa").value = cidade.mapa || "";
+
+        ["lista-dados", "lista-destaques", "lista-contato"].forEach(function (id) {
+            campo(id).textContent = "";
+        });
+        (cidade.dados || []).forEach(function (par) {
+            adicionarLinha(campo("lista-dados"), par, "Rótulo (ex.: Praia)", "Valor (ex.: Pôr do Sol)");
+        });
+        (cidade.destaques || []).forEach(adicionarDestaque);
+        (cidade.contato || []).forEach(function (par) {
+            adicionarLinha(campo("lista-contato"), par, "Rótulo (ex.: Telefone)", "Valor");
+        });
     }
 
-    // Guarda no rascunho o texto da cidade que está na tela (se foi alterado)
+    function lerCidade() {
+        return {
+            nome: campo("edit-cidade-nome").value.trim(),
+            slogan: campo("edit-cidade-slogan").value.trim(),
+            descricao: campo("edit-cidade-desc").value.trim(),
+            dados: lerLinhas(campo("lista-dados")),
+            destaques: lerDestaques(),
+            informacoes: campo("edit-cidade-info").value.trim(),
+            contato: lerLinhas(campo("lista-contato")),
+            mapa: campo("edit-cidade-mapa").value.trim(),
+        };
+    }
+
+    // Guarda no rascunho a cidade que está na tela
     function guardarCidadeAtual() {
-        const slug = estado.cidadeAtual;
-        if (!slug) return;
-        const texto = campo("edit-cidade-desc").value.trim();
-        if (texto === estado.textoCarregado.trim()) return;
-        if (texto) estado.dados.cidades[slug] = texto;
-        else delete estado.dados.cidades[slug];
+        if (!estado.cidadeAtual) return;
+        estado.arquivos.cidades.dados.cidades[estado.cidadeAtual] = lerCidade();
     }
 
     function lerContato() {
@@ -518,6 +772,44 @@ const REPOSITORIO_PADRAO = "";
         campo("edit-facebook").value = contato.facebook || "";
     }
 
+    /* ---------- leitura e gravação no GitHub ---------- */
+    async function lerArquivo(nome) {
+        const resposta = await github(
+            "/repos/" + estado.repo + "/contents/" + nome + "?ref=" + encodeURIComponent(estado.branch)
+        );
+        if (resposta.status === 404) return null;
+        if (!resposta.ok) throw new Error("Não foi possível ler " + nome + " (erro " + resposta.status + ").");
+
+        const arquivo = await resposta.json();
+        try {
+            return { sha: arquivo.sha, dados: JSON.parse(deBase64(arquivo.content)) };
+        } catch (erro) {
+            throw new Error(nome + " está com formato inválido no repositório.");
+        }
+    }
+
+    async function gravarArquivo(nome, dados, sha) {
+        const corpo = {
+            message: "Atualiza " + nome + " pelo painel administrativo",
+            content: paraBase64(serializar(dados)),
+            branch: estado.branch,
+        };
+        if (sha) corpo.sha = sha;
+
+        const resposta = await github("/repos/" + estado.repo + "/contents/" + nome, {
+            method: "PUT",
+            body: JSON.stringify(corpo),
+        });
+        if (resposta.status === 409 || resposta.status === 422) {
+            throw new Error("O arquivo " + nome + " foi alterado por outra pessoa. Saia, entre novamente e refaça a edição.");
+        }
+        if (resposta.status === 401 || resposta.status === 403 || resposta.status === 404) {
+            throw new Error("Sem permissão para gravar. Confira se o token tem acesso de escrita em \"Contents\".");
+        }
+        if (!resposta.ok) throw new Error("Falha ao salvar " + nome + " (erro " + resposta.status + ").");
+        return (await resposta.json()).content.sha;
+    }
+
     /* ---------- entrar ---------- */
     async function entrar(evento) {
         evento.preventDefault();
@@ -530,8 +822,8 @@ const REPOSITORIO_PADRAO = "";
             return;
         }
 
-        const botao = formLogin.querySelector("button[type='submit']");
-        botao.disabled = true;
+        const botaoEntrar = formLogin.querySelector("button[type='submit']");
+        botaoEntrar.disabled = true;
         estado.repo = repo;
         estado.token = token;
 
@@ -546,40 +838,26 @@ const REPOSITORIO_PADRAO = "";
                 throw new Error("Este token não tem permissão de escrita no repositório.");
             }
             estado.branch = info.default_branch;
-            await carregarDados();
+
+            const contato = await lerArquivo(ARQUIVO_DADOS);
+            const cidades = await lerArquivo(ARQUIVO_CIDADES);
+            if (!cidades) throw new Error(ARQUIVO_CIDADES + " não foi encontrado no repositório. Envie esse arquivo junto com o site.");
+
+            const dadosContato = { contato: (contato && contato.dados.contato) || {} };
+            estado.arquivos.contato = { sha: contato ? contato.sha : null, dados: dadosContato, original: serializar(dadosContato) };
+            const dadosCidades = { cidades: cidades.dados.cidades || {} };
+            estado.arquivos.cidades = { sha: cidades.sha, dados: dadosCidades, original: serializar(dadosCidades) };
 
             campo("admin-token").value = "";
-            preencherContato(estado.dados.contato);
-            await carregarCidade(campo("select-cidade").value);
+            preencherContato(dadosContato.contato);
+            preencherCidade(campo("select-cidade").value);
             alternarTelas(true);
         } catch (erro) {
             Object.assign(estado, vazio());
             mostrarMensagem("login-erro", erro.message || "Falha ao entrar.");
         } finally {
-            botao.disabled = false;
+            botaoEntrar.disabled = false;
         }
-    }
-
-    async function carregarDados() {
-        const resposta = await github(
-            "/repos/" + estado.repo + "/contents/" + ARQUIVO_DADOS + "?ref=" + encodeURIComponent(estado.branch)
-        );
-        if (resposta.status === 404) {
-            estado.sha = null;
-            estado.dados = { contato: {}, cidades: {} };
-            return;
-        }
-        if (!resposta.ok) throw new Error("Não foi possível ler " + ARQUIVO_DADOS + " (erro " + resposta.status + ").");
-
-        const arquivo = await resposta.json();
-        let dados;
-        try {
-            dados = JSON.parse(deBase64(arquivo.content));
-        } catch (erro) {
-            throw new Error(ARQUIVO_DADOS + " está com formato inválido no repositório.");
-        }
-        estado.sha = arquivo.sha;
-        estado.dados = { contato: dados.contato || {}, cidades: dados.cidades || {} };
     }
 
     /* ---------- salvar ---------- */
@@ -588,37 +866,30 @@ const REPOSITORIO_PADRAO = "";
         mostrarMensagem("edit-sucesso", "");
 
         guardarCidadeAtual();
-        estado.textoCarregado = campo("edit-cidade-desc").value;
-        estado.dados.contato = lerContato();
+        estado.arquivos.contato.dados.contato = lerContato();
 
-        const corpo = {
-            message: "Atualiza conteúdo pelo painel administrativo",
-            content: paraBase64(JSON.stringify(estado.dados, null, 2) + "\n"),
-            branch: estado.branch,
-        };
-        if (estado.sha) corpo.sha = estado.sha;
+        const nomes = { contato: ARQUIVO_DADOS, cidades: ARQUIVO_CIDADES };
+        const pendentes = Object.keys(nomes).filter(function (chave) {
+            return serializar(estado.arquivos[chave].dados) !== estado.arquivos[chave].original;
+        });
+        if (!pendentes.length) {
+            mostrarMensagem("edit-sucesso", "Nenhuma alteração para salvar.");
+            return;
+        }
 
-        const botao = formEdicao.querySelector("button[type='submit']");
-        botao.disabled = true;
+        const botaoSalvar = formEdicao.querySelector("button[type='submit']");
+        botaoSalvar.disabled = true;
         try {
-            const resposta = await github("/repos/" + estado.repo + "/contents/" + ARQUIVO_DADOS, {
-                method: "PUT",
-                body: JSON.stringify(corpo),
-            });
-            if (resposta.status === 409 || resposta.status === 422) {
-                throw new Error("O arquivo foi alterado por outra pessoa. Saia, entre novamente e refaça a edição.");
+            for (const chave of pendentes) {
+                const arquivo = estado.arquivos[chave];
+                arquivo.sha = await gravarArquivo(nomes[chave], arquivo.dados, arquivo.sha);
+                arquivo.original = serializar(arquivo.dados);
             }
-            if (resposta.status === 401 || resposta.status === 403 || resposta.status === 404) {
-                throw new Error("Sem permissão para gravar. Confira se o token tem acesso de escrita em \"Contents\".");
-            }
-            if (!resposta.ok) throw new Error("Falha ao salvar (erro " + resposta.status + ").");
-
-            estado.sha = (await resposta.json()).content.sha;
             mostrarMensagem("edit-sucesso", "Alterações salvas! O site é atualizado em cerca de 1 minuto.");
         } catch (erro) {
             mostrarMensagem("edit-erro", erro.message || "Falha ao salvar.");
         } finally {
-            botao.disabled = false;
+            botaoSalvar.disabled = false;
         }
     }
 
@@ -638,6 +909,15 @@ const REPOSITORIO_PADRAO = "";
     campo("btn-logout").addEventListener("click", sair);
     campo("select-cidade").addEventListener("change", function (evento) {
         guardarCidadeAtual();
-        carregarCidade(evento.target.value);
+        preencherCidade(evento.target.value);
+    });
+    campo("btn-add-dado").addEventListener("click", function () {
+        adicionarLinha(campo("lista-dados"), {}, "Rótulo (ex.: Praia)", "Valor (ex.: Pôr do Sol)");
+    });
+    campo("btn-add-destaque").addEventListener("click", function () {
+        adicionarDestaque({});
+    });
+    campo("btn-add-contato").addEventListener("click", function () {
+        adicionarLinha(campo("lista-contato"), {}, "Rótulo (ex.: Telefone)", "Valor");
     });
 })();

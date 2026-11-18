@@ -58,7 +58,7 @@
                     <input type="text" id="edit-facebook" placeholder="rtpantanalpaulista" autocomplete="off">
                 </div>
 
-                <h3 class="admin-subtitulo--espaco">Editar Texto das Cidades</h3>
+                <h3 class="admin-subtitulo--espaco">Editar Conteúdo das Cidades</h3>
                 <hr>
                 <div class="form-group">
                     <label for="select-cidade">Selecione o Município:</label>
@@ -76,12 +76,53 @@
                         <option value="suzanapolis">Suzanápolis</option>
                         <option value="valparaiso">Valparaíso</option>
                     </select>
+                    <p class="dica-campo">Ao trocar de cidade, o que você editou fica guardado até clicar em "Salvar Alterações".</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="edit-cidade-desc">Texto Completo da Cidade:</label>
+                    <label for="edit-cidade-nome">Título da página da cidade:</label>
+                    <input type="text" id="edit-cidade-nome" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="edit-cidade-slogan">Slogan:</label>
+                    <input type="text" id="edit-cidade-slogan" autocomplete="off" placeholder="Ex.: O Paraíso do Pescador">
+                </div>
+                <div class="form-group">
+                    <label for="edit-cidade-desc">Descrição:</label>
                     <textarea id="edit-cidade-desc"></textarea>
-                    <p class="dica-campo">Separe os parágrafos com uma linha em branco. Apagar todo o texto restaura o texto original da página.</p>
+                    <p class="dica-campo">Separe os parágrafos com uma linha em branco.</p>
+                </div>
+
+                <div class="form-group">
+                    <span class="admin-rotulo">Dados rápidos:</span>
+                    <p class="dica-campo">Pequenos destaques exibidos ao lado da descrição (rótulo e valor).</p>
+                    <div id="lista-dados"></div>
+                    <button type="button" id="btn-add-dado" class="btn-salvar btn-salvar--neutro btn-mini">+ Adicionar dado</button>
+                </div>
+
+                <div class="form-group">
+                    <span class="admin-rotulo">Destaques e Visitas:</span>
+                    <p class="dica-campo">Cada atrativo pode ter descrição e detalhes (endereço, telefone, horário). No site, os que têm descrição ou detalhes abrem ao clicar.</p>
+                    <div id="lista-destaques"></div>
+                    <button type="button" id="btn-add-destaque" class="btn-salvar btn-salvar--neutro btn-mini">+ Adicionar atrativo</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-cidade-info">Informações:</label>
+                    <textarea id="edit-cidade-info" class="admin-texto-curto"></textarea>
+                    <p class="dica-campo">Texto livre (opcional): dicas, acesso, funcionamento.</p>
+                </div>
+
+                <div class="form-group">
+                    <span class="admin-rotulo">Contato:</span>
+                    <p class="dica-campo">Prefeitura, telefone, e-mail e site. E-mails e endereços de site viram links automaticamente.</p>
+                    <div id="lista-contato"></div>
+                    <button type="button" id="btn-add-contato" class="btn-salvar btn-salvar--neutro btn-mini">+ Adicionar contato</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-cidade-mapa">Local do mapa:</label>
+                    <input type="text" id="edit-cidade-mapa" autocomplete="off" placeholder="Ex.: Pereira Barreto,SP,Brasil">
                 </div>
 
                 <div class="admin-acoes">

@@ -742,6 +742,48 @@ button:focus-visible {
     border-radius: 0 100% 0 100%;
 }
 
+/* Atrativos com descrição e detalhes (abrem ao clicar) */
+.info-lista li:has(.atrativo[open]) { grid-column: 1 / -1; }
+
+.atrativo,
+.atrativo * { text-align: left; }
+
+.atrativo__nome {
+    cursor: pointer;
+    list-style: none;
+}
+
+.atrativo__nome::-webkit-details-marker { display: none; }
+
+.atrativo__nome::after {
+    content: "+";
+    margin-left: 8px;
+    font-weight: 700;
+    color: var(--laranja);
+}
+
+.atrativo[open] .atrativo__nome::after { content: "−"; }
+
+.atrativo__corpo {
+    margin-top: 8px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--laranja);
+    border-radius: 0 10px 10px 0;
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.atrativo__corpo p + p,
+.atrativo__corpo p + .atrativo__detalhes { margin-top: 8px; }
+
+.info-descricao p + p { margin-top: 10px; }
+.info-descricao p + .info-contato { margin-top: 12px; }
+
+.info-contato a,
+.atrativo__detalhes a { color: var(--verde); overflow-wrap: anywhere; }
+
 .cidade__mapa {
     margin-top: 20px;
     padding: 14px;
@@ -1430,3 +1472,31 @@ section.eventos {
 .mensagem--sucesso { color: green; }
 
 .dica-campo { margin-top: 4px; font-size: 0.85rem; color: #666; }
+
+/* ===== Painel: campos repetíveis (dados, atrativos, contatos) ===== */
+.admin-rotulo { display: block; margin-bottom: 6px; font-weight: 600; color: var(--verde); }
+.admin-card .admin-texto-curto { height: 90px; }
+
+.btn-mini { padding: 6px 14px; font-size: 0.85rem; }
+
+.admin-linha {
+    display: grid;
+    grid-template-columns: minmax(90px, 1fr) minmax(0, 2fr) auto;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.admin-destaque {
+    margin-bottom: 14px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.admin-destaque > * + * { margin-top: 8px; }
+.admin-card .admin-destaque__descricao { height: 90px; }
+
+@media (max-width: 600px) {
+    .admin-linha { grid-template-columns: 1fr; }
+}

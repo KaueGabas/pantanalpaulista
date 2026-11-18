@@ -1,0 +1,800 @@
+{
+  "cidades": {
+    "andradina": {
+      "nome": "Município de Andradina",
+      "slogan": "Terra do Rei do Gado",
+      "descricao": "A Terra do Rei do Gado está a 640 km da capital e tem como uma de suas principais fontes de economia a pecuária, com o gado de leite e de corte. É uma cidade em pleno desenvolvimento, que conta com várias empresas e indústrias.\n\nAndradina tem características das grandes metrópoles sem perder o charme e aconchego, típicos de cidades interioranas. Você irá se apaixonar pelo lugar todas as vezes em que pisar lá.",
+      "dados": [
+        {
+          "rotulo": "Comércio",
+          "valor": "Rua Paes Leme"
+        },
+        {
+          "rotulo": "Shopping",
+          "valor": "Oeste Plaza"
+        },
+        {
+          "rotulo": "Cultura",
+          "valor": "Estação N.O.B."
+        },
+        {
+          "rotulo": "Lazer",
+          "valor": "ATC & Igrejas"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Centro Comercial",
+          "descricao": "Localizado na Rua Paes Leme, possui aproximadamente 150 lojas de varejo com artigos variados.\n\nA Prefeitura fecha as ruas no final do ano, decorando-as com o famoso e esperado \"Natal Iluminado\", criando um grande e belo calçadão, para comodidade e conforto do consumidor."
+        },
+        {
+          "nome": "Oeste Plaza Shopping",
+          "descricao": "Na entrada da cidade, o shopping possui um espaço para 70 lojas, duas salas de cinema e um hipermercado em anexo. Para o cliente que merece o melhor atendimento e comodidade, o local também conta com um hotel no pátio de seu estacionamento.",
+          "detalhes": [
+            {
+              "rotulo": "Instagram",
+              "valor": "@oesteplazashopping"
+            },
+            {
+              "rotulo": "Funcionamento",
+              "valor": "Todos os dias"
+            },
+            {
+              "rotulo": "De segunda a sábado",
+              "valor": "das 10h às 22h"
+            },
+            {
+              "rotulo": "Aos domingos",
+              "valor": "das 13h às 19h"
+            }
+          ]
+        },
+        {
+          "nome": "Centro Histórico Cultural Pioneiros de Andradina",
+          "descricao": "Restaurado, o Centro Histórico Cultural foi o primeiro prédio tombado como patrimônio histórico da cidade, por ser a antiga estação ferroviária do N.O.B., que praticamente deu origem ao município. O prédio abriga a Secretaria da Cultura, a Casa do Artesão, a Aliança dos Literatos de Andradina (Aliandra) e conta com obras do famoso artista plástico Adélio Sarro, além de anfiteatro e arena ao ar livre. Hoje, o Centro é considerado um dos principais cartões postais da cidade."
+        },
+        {
+          "nome": "Andradina Tênis Clube",
+          "descricao": "O ATC é uma excelente opção para passar um dia agradável com a família, por ser um ambiente de lazer com piscinas, quadras de tênis, áreas de recreação infantil, academia, sauna e muitas outras opções para diversão. O clube também conta com campo de futebol e quiosques de aluguel para aniversários ou confraternizações."
+        },
+        {
+          "nome": "Igrejas",
+          "descricao": "Com arquiteturas que inspiram, tanto a Igreja Matriz São Sebastião (que possui um estilo inglês da época do café) quanto a Paróquia Nossa Senhora das Graças (construída em 1965) são destinos indispensáveis para os amantes de passeios culturais."
+        }
+      ],
+      "informacoes": "",
+      "contato": [
+        {
+          "rotulo": "Região Turística",
+          "valor": "www.pantanalpaulista.com.br"
+        },
+        {
+          "rotulo": "Redes sociais",
+          "valor": "rtpantanalpaulista"
+        }
+      ],
+      "mapa": "Andradina,SP,Brasil"
+    },
+    "castilho": {
+      "nome": "Castilho",
+      "slogan": "O Paraíso do Pescador",
+      "descricao": "Localizado no extremo noroeste paulista, Castilho é conhecida como O Paraíso do Pescador. É um município abundante em águas limpas, sendo banhado pelos rios Tietê, Paraná e Aguapeí. Apresenta, também, uma vasta fauna e flora, e compõe a exuberante natureza do acervo do Pantanal Paulista.\n\nOs passeios são imperdíveis, afinal, além de ser muito bonita, a cidade carrega consigo diversas características históricas... É simplesmente um passeio inesquecível!",
+      "dados": [
+        {
+          "rotulo": "Atração",
+          "valor": "Alambique"
+        },
+        {
+          "rotulo": "Pesca",
+          "valor": "Pesqueiro Piapara"
+        },
+        {
+          "rotulo": "Energia",
+          "valor": "Usina Jupiá"
+        },
+        {
+          "rotulo": "História",
+          "valor": "Capela Lapa"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Alambique Estância São João",
+          "descricao": "E que tal uma visita guiada para conhecer o processo da produção de cachaça? Lá você encontra os seguintes sabores: coco, canela, pequi, abacaxi, hortelã, limão, mel e gengibre e frutas vermelhas, além de cachaça artesanal envelhecida.",
+          "detalhes": [
+            {
+              "rotulo": "Endereço",
+              "valor": "Estância São João, nº 1 - Bairro 17"
+            },
+            {
+              "rotulo": "Telefone",
+              "valor": "(18) 996196300 | (18) 99630-2229"
+            }
+          ]
+        },
+        {
+          "nome": "Pesqueiro Piapara",
+          "descricao": "O Pesqueiro Piapara é o lugar perfeito para quem busca um programa de lazer para toda a família, já que conta com estrutura completa para o atendimento dos visitantes e amantes de pesca.",
+          "detalhes": [
+            {
+              "rotulo": "Endereço",
+              "valor": "Rua Taro Morimoto, nº 323 - Bairro Beira Rio"
+            },
+            {
+              "rotulo": "Telefone",
+              "valor": "(18) 99679-9489 | (67) 9907-4467"
+            }
+          ]
+        },
+        {
+          "nome": "Usina Hidrelétrica Eng. Souza Dias (Jupiá)",
+          "descricao": "A Usina Hidrelétrica Engenheiro Souza Dias (Jupiá) está situada sobre o Rio Paraná, na intersecção com o rio Sucuriú, no ponto chamado Jupiá, entre as cidades de Três Lagoas (Mato Grosso do Sul) e Castilho (São Paulo).",
+          "detalhes": [
+            {
+              "rotulo": "Endereço",
+              "valor": "Rodovia Marechal Rondon - KM 667 - nº 1"
+            },
+            {
+              "rotulo": "Telefone",
+              "valor": "(67) 3509-2365 | (67) 3509-2706"
+            }
+          ]
+        },
+        {
+          "nome": "Capela Bom Jesus da Lapa",
+          "descricao": "Foi uma das primeiras capelas do município. Foi construída em 1957 e oficialmente considerada capela da paróquia de São José a partir do dia 01 de Janeiro de 1959. Sua arquitetura original foi mantida.",
+          "detalhes": [
+            {
+              "rotulo": "Endereço",
+              "valor": "Rua Bento da Cruz, nº 0, Bairro Laranjeiras (Esquina com a Rua Samira Zahr)"
+            },
+            {
+              "rotulo": "Telefone",
+              "valor": "(18) 3741-1158"
+            }
+          ]
+        },
+        {
+          "nome": "Aulas de Mergulho",
+          "descricao": "O mergulho o levará para destinos exuberantes! Conta com aventuras das mais relaxantes até as mais radicais, de acordo com seu perfil e gosto. Ficou interessado? Então entre em contato e pegue todas as informações.",
+          "detalhes": [
+            {
+              "rotulo": "Prefeitura de Castilho",
+              "valor": "Praça da Matriz, Bairro Centro"
+            },
+            {
+              "rotulo": "Telefone",
+              "valor": "(18) 3741-9000"
+            }
+          ]
+        },
+        {
+          "nome": "Rio Aguapeí",
+          "descricao": "O Aguapeí, também conhecido como Rio dos Aguapeís, é um rio que banha o estado de São Paulo, no Brasil. Ele nasce no município de Gália, bem próximo à rodovia SP-294 (segue para o norte até a altura de Lins)."
+        },
+        {
+          "nome": "Igreja Matriz São José",
+          "descricao": "Foi inaugurada em 1959, e sua última reforma iniciada 2015, ainda está em andamento. A igreja faz parte dos atrativos históricos e culturais do município.",
+          "detalhes": [
+            {
+              "rotulo": "Endereço",
+              "valor": "Praça da Matriz, nº 301, Bairro Centro"
+            },
+            {
+              "rotulo": "Telefone",
+              "valor": "(18) 3741-1158"
+            }
+          ]
+        }
+      ],
+      "informacoes": "",
+      "contato": [
+        {
+          "rotulo": "Prefeitura",
+          "valor": "Praça da Matriz, Bairro Centro"
+        },
+        {
+          "rotulo": "Telefone",
+          "valor": "(18) 3741-9000"
+        },
+        {
+          "rotulo": "Site",
+          "valor": "castilho.sp.gov.br"
+        }
+      ],
+      "mapa": "Castilho,SP,Brasil"
+    },
+    "guaracai": {
+      "nome": "Guaraçaí",
+      "slogan": "Capital do Abacaxi",
+      "descricao": "Capital do Abacaxi do Estado de São Paulo e Cidade Presépio, unindo o turismo rural, as plantações da fruta e a tranquilidade acolhedora do interior.",
+      "dados": [
+        {
+          "rotulo": "Perfil",
+          "valor": "Turismo Rural"
+        },
+        {
+          "rotulo": "Produção",
+          "valor": "Abacaxi"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Plantações de Abacaxi"
+        },
+        {
+          "nome": "Tradição Cultural"
+        },
+        {
+          "nome": "Ambiente Interiorano"
+        }
+      ],
+      "informacoes": "Localizada na rota integrada do Pantanal Paulista, com fácil acesso rodoviário.",
+      "contato": [],
+      "mapa": "Guaraçaí,SP,Brasil"
+    },
+    "ilha-solteira": {
+      "nome": "Ilha Solteira – O Paraíso da Pesca",
+      "slogan": "Estância Turística",
+      "descricao": "A Estância Turística de Ilha Solteira é banhada pelos rios Paraná, Tietê e São José dos Dourados. Agraciada por esse grande encontro fluvial, permitiu-se o surgimento de uma vasta e rica biodiversidade, além de ser um convite à prática de esportes aquáticos e passeios em veleiro e culinária diversificada. Durante o ano a cidade realiza eventos, festas e festivais fortificando a mistura de culturas e a diversidade.\n\nIlha Solteira que, apesar do nome, não é uma ilha, é considerada uma das sete cidades que você precisa conhecer no interior do Estado de São Paulo. Com um pouco mais de 26 mil habitantes, o município está localizado ao noroeste do Estado, divisa com Mato Grosso do Sul. Sua riqueza histórica, cultural e natural fez o Governo do Estado classificá-la como Estância Turística.\n\nUm lugar charmoso onde o povo, a cultura e a história a tornam singular. O roteiro é bem variado e as opções de programas são grandes.",
+      "dados": [
+        {
+          "rotulo": "Usina",
+          "valor": "CTG Brasil"
+        },
+        {
+          "rotulo": "Lazer",
+          "valor": "Praias"
+        },
+        {
+          "rotulo": "Esporte",
+          "valor": "Ciclovias"
+        },
+        {
+          "rotulo": "Família",
+          "valor": "Zoológico"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Usina Hidrelétrica Ilha Solteira",
+          "descricao": "Em 15 de outubro de 1968, o município foi criado para ser moradia de trabalhadores que foram para a cidade construir a usina hidrelétrica, na década de 1960. Perto da obra havia uma ilha solitária, cujo nome foi dado à usina e também à cidade.\n\nA Usina Hidrelétrica Ilha Solteira está situada no encontro dos Rios Paraná e São José dos Dourados, e é considerada a maior usina já construída pela CESP, sendo uma das maiores e mais importantes do país.\n\nFoi em Ilha Solteira que a engenharia nacional incorporou experiências e tecnologias que hoje continuam a ser usadas e desenvolvidas nas obras de grande porte, a começar pelo planejamento acurado da infraestrutura de logística e canteiro de obras, que permitiram a quebra de vários recordes de produção.\n\nEm julho de 2016, a CTG Brasil iniciou a operação das Usinas Hidrelétricas Ilha Solteira e Jupiá, pelo prazo de trinta anos.",
+          "detalhes": [
+            {
+              "rotulo": "Atividades",
+              "valor": "Visita Técnica"
+            },
+            {
+              "rotulo": "Dias de funcionamento",
+              "valor": "Segunda a Sexta-Feira"
+            },
+            {
+              "rotulo": "Horários",
+              "valor": "às 10h e às 15h"
+            },
+            {
+              "rotulo": "Contato",
+              "valor": "CTG BRASIL (18) 3743-7010"
+            },
+            {
+              "rotulo": "Responsável",
+              "valor": "Marcelo Milan"
+            },
+            {
+              "rotulo": "Obs.",
+              "valor": "Escolas e Universidades devem agendar com, no mínimo, um mês de antecedência."
+            }
+          ]
+        },
+        {
+          "nome": "Praias Marina e Catarina",
+          "descricao": "Uma ótima opção para quem quer relaxar, é passar um tempinho na Praia Catarina. Ela oferece uma estrutura de lazer que inclui quiosques, churrasqueiras, restaurantes, área de camping, campo de futebol, duchas e muito mais! Com certeza é o lugar perfeito para quem quer sombra e água fresca.\n\nJá para aqueles que curtem esportes aquáticos, a nossa sugestão é a Praia Marina. A aventura e diversão do lugar garantirão a alegria até dos mais exigentes.",
+          "detalhes": [
+            {
+              "rotulo": "",
+              "valor": "Entrada gratuita"
+            },
+            {
+              "rotulo": "Funcionamento",
+              "valor": "Todos os dias das 8h às 23h"
+            },
+            {
+              "rotulo": "Contato",
+              "valor": "(18) 3743-6088"
+            },
+            {
+              "rotulo": "E-mail",
+              "valor": "turismo@ilhasolteira.sp.gov.br"
+            }
+          ]
+        },
+        {
+          "nome": "Ciclovias",
+          "descricao": "Andar de bicicleta é muito mais que uma atividade física, é também uma diversão! Você pode chamar os amigos e curtir um dia diferente. Além de aproveitar a cidade de forma nada tradicional, você irá explorar e conhecer novos roteiros, queimar calorias, ter mais disposição, sentir aquele ventinho no rosto e a sensação de liberdade. Fazer um passeio turístico de bike diverte e ainda não se gasta nada com isso. São 5.740 metros de ciclovia, que interligam a Zona Norte à, Zona Sul, passando pelo Centro de Conservação da Fauna Silvestre em direção à Torre de TV.\n\nVocê gostou da ideia, mas não trouxe uma bicicleta para essa viagem? Não tem problema! A \"Bicikletaria do Gordo\" aluga bikes para os visitantes que quiserem desfrutar da Ciclovia.",
+          "detalhes": [
+            {
+              "rotulo": "Funcionamento",
+              "valor": "Segunda a sexta: 9 às 18h | Aos sábados: 9h às 12h"
+            },
+            {
+              "rotulo": "Endereço",
+              "valor": "Passeio Niterói, 105"
+            },
+            {
+              "rotulo": "Contato",
+              "valor": "(18) 3742-7260"
+            },
+            {
+              "rotulo": "Site",
+              "valor": "www.visiteilhasolteira.sp.gov.br"
+            }
+          ]
+        },
+        {
+          "nome": "Piratas da Ilha",
+          "descricao": "Cansado de destinos óbvios e querendo viver uma experiência diferente nas próximas férias? Que tal se aventurar por uma ilha deserta? Os passeios de veleiro, que levam o visitante a descobrir praias desertas e ilhotas localizadas nos diferentes rios que cruzam o município, são uma experiência única em sua viagem.",
+          "detalhes": [
+            {
+              "rotulo": "Responsável",
+              "valor": "Prof. Marco Chiquiteli"
+            },
+            {
+              "rotulo": "Funcionamento",
+              "valor": "Finais de semana"
+            },
+            {
+              "rotulo": "Contato",
+              "valor": "(18) 99135-4662"
+            },
+            {
+              "rotulo": "Site",
+              "valor": "www.piratasdailha.com"
+            },
+            {
+              "rotulo": "E-mail",
+              "valor": "piratagrandeslago@hotmail.com"
+            }
+          ]
+        },
+        {
+          "nome": "Parque da Mantiqueira “Ley Leite Bueno”",
+          "descricao": "O Parque da Mantiqueira, conhecido como Cidade da Criança, possui atrações que tornarão a viagem da criançada inesquecível! Por lá, é possível encontrar casas de bonecas, brinquedos, além de um espaço batizado como \"Sítio do Pica-Pau-Amarelo\". O parque tem também campo de futebol, pista de skate, quadra de tênis, academia ao ar livre, pista de caminhada, entre outros ambientes criados para a prática de esportes. O local oferece entretenimento não só para as crianças, mas para toda a família.",
+          "detalhes": [
+            {
+              "rotulo": "Funcionamento",
+              "valor": "Todos os dias das 8h às 20h"
+            },
+            {
+              "rotulo": "Contato",
+              "valor": "(18) 3743-6026/6089"
+            },
+            {
+              "rotulo": "Site",
+              "valor": "visiteilhasolteira.sp.gov.br"
+            }
+          ]
+        },
+        {
+          "nome": "Zoológico",
+          "descricao": "Criado como forma de compensação, devido a parte do município ter sido inundada pela construção da Usina Hidrelétrica, o Centro de Conservação da Fauna Silvestre, que ganhou o apelido de Zoológico, abriga vários animais e tem o maior e mais rico acervo regional de espécies próprias do noroeste paulista. Quem atravessa os portões do zoológico se encanta com a exuberância do local. Muito verde e um atmosfera calma. Um pedacinho da selva dentro da cidade. A cada jaula visitada, novas emoções e informações. Os animais, por lá vivem pacificamente, e o visitante, além de observá-los, aprende mais sobre eles ao ler as placas explicativas espalhadas por todo o parque. É diversão garantida para adultos e crianças!",
+          "detalhes": [
+            {
+              "rotulo": "Atividades",
+              "valor": "Visita Técnica e Visita Contemplativa"
+            },
+            {
+              "rotulo": "Funcionamento",
+              "valor": "Sábado e domingo das 9 às 16h"
+            },
+            {
+              "rotulo": "Telefone",
+              "valor": "(18) 3742-2916"
+            }
+          ]
+        }
+      ],
+      "informacoes": "",
+      "contato": [
+        {
+          "rotulo": "Telefone",
+          "valor": "(18) 3743-6088"
+        },
+        {
+          "rotulo": "E-mail",
+          "valor": "turismo@ilhasolteira.sp.gov.br"
+        },
+        {
+          "rotulo": "Site",
+          "valor": "ilhasolteira.sp.gov.br"
+        }
+      ],
+      "mapa": "Ilha Solteira,SP,Brasil"
+    },
+    "itapura": {
+      "nome": "Itapura",
+      "slogan": "Município de Interesse Turístico",
+      "descricao": "O município de Interesse Turístico de Itapura se instituiu com o encontro dos rios Tietê e Paraná. Atualmente é palco de eventos como Torneios de Pesca famosos na região e o exuberante cenário natural é berço de importantes espécies da fauna, resultando no clima perfeito para o lazer, pesca esportiva, prática de mergulho e banho nas águas cristalinas.\n\nQuem gosta de viajar em busca de uma boa pescaria, esse é o lugar. A cidade é abençoada por um clima bastante tropical, onde a pescaria e o mergulho serão uma excelente opção para quem busca um refresco.",
+      "dados": [
+        {
+          "rotulo": "Mergulho",
+          "valor": "Usina Eloy Chaves"
+        },
+        {
+          "rotulo": "História",
+          "valor": "Vapor Tamandatay"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Turismo de Mergulho",
+          "descricao": "Quem gosta de mergulhar, vai adorar essa atração turística!\n\nA usina \"Eloy Chaves\" encontra-se submersa junto às águas do rio Tietê, a poucos metros da praia municipal. Com a construção da usina de Jupiá em 1960, as águas do rio Tietê subiram para a formação do lago, submergindo a usina \"Eloy Chaves\" e a antiga cidade de Itapura, que com a formação do lago foi completamente alagada.\n\nAtualmente, é possível visualizar parte da grade superior da usina que está acima do nível da água. A parte submersa é motivo de curiosidade de mergulhadores e turistas que passam pela cidade. A construção encontra-se praticamente intacta, mesmo após anos de alagamento. No mergulho, pode-se visualizar as antigas escadarias, os locais onde se localizavam as turbinas e vários outros pontos com boa visibilidade.\n\nOutro ponto de mergulho é o vapor Tamandatay, que repousa nas águas majestosas do rio Tietê desde 20 de abril de 1883, há mais de cem anos. Pouco resta do navio, apenas o casco, que está a cerca de 20 metros de profundidade. O mergulho neste ponto se tornou uma experiência única para os amantes da história e desta prática radical."
+        },
+        {
+          "nome": "Encontro dos Rios Tietê e Paraná",
+          "descricao": "O município tem o privilégio de estar próximo ao encontro dos rios Tietê e Paraná, uma das mais belas vistas do interior paulista. O exuberante cenário natural é berço de importantes espécies da fauna, um cenário e clima perfeitos para o lazer, a pesca esportiva, prática de mergulho e banho nas águas cristalinas."
+        },
+        {
+          "nome": "Pesca Esportiva",
+          "descricao": "Que tal uma atividade de lazer entre amigos e família?\n\nA pesca esportiva, antes vista como uma atividade de lazer rústica, ganha cada dia mais adeptos e já se tornou um programa para toda a família. Banhada pelos rios Tietê e Paraná, com acesso ao rio Sucuriú, a região de clima quente favorece a pesca de espécies de peixes cobiçados, como Tucunaré, Pacu e Piau. Itapura é roteiro obrigatório para pescadores!"
+        }
+      ],
+      "informacoes": "",
+      "contato": [
+        {
+          "rotulo": "Prefeitura Municipal",
+          "valor": "Rua Getúlio Vargas 1087 - Cep 15390-000"
+        },
+        {
+          "rotulo": "Telefone",
+          "valor": "(18) 3745-9020"
+        },
+        {
+          "rotulo": "Site",
+          "valor": "www.itapura.sp.gov.br"
+        },
+        {
+          "rotulo": "Secretaria Municipal de Assistência Social, Cultura e Turismo",
+          "valor": "Av. Marechal Artur da Costa e Silva"
+        },
+        {
+          "rotulo": "Telefone",
+          "valor": "(18) 3745-1340"
+        },
+        {
+          "rotulo": "Turismo",
+          "valor": "www.itapura.sp.gov.br/turismo"
+        },
+        {
+          "rotulo": "E-mail",
+          "valor": "turismo@itapura.sp.gov.br"
+        }
+      ],
+      "mapa": "Itapura,SP,Brasil"
+    },
+    "mirandopolis": {
+      "nome": "Mirandópolis",
+      "slogan": "Tradição Japonesa",
+      "descricao": "Comunidade Yuba de tradição japonesa, rica herança cultural, religiosidade marcante e a histórica Igreja de São João Batista com vitrais singulares.",
+      "dados": [
+        {
+          "rotulo": "Cultura",
+          "valor": "Comunidade Yuba"
+        },
+        {
+          "rotulo": "Patrimônio",
+          "valor": "Igreja Matriz"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Comunidade Agrícola Yuba"
+        },
+        {
+          "nome": "Igreja de São João Batista"
+        },
+        {
+          "nome": "Arquitetura e Vitrais"
+        }
+      ],
+      "informacoes": "Localizada na região Noroeste Paulista, conectada às principais rodovias regionais.",
+      "contato": [],
+      "mapa": "Mirandópolis,SP,Brasil"
+    },
+    "murutinga": {
+      "nome": "Murutinga do Sul",
+      "slogan": "Cultura Sertaneja",
+      "descricao": "Tradições sertanejas marcantes, festividades de rodeio, aconchego típico do interior paulista e hospitalidade sem igual.",
+      "dados": [
+        {
+          "rotulo": "Tradição",
+          "valor": "Festas Regionais"
+        },
+        {
+          "rotulo": "Ambiente",
+          "valor": "Aconchegante"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Cultura Sertaneja"
+        },
+        {
+          "nome": "Eventos Tradicionais"
+        },
+        {
+          "nome": "Praça Central"
+        }
+      ],
+      "informacoes": "Parada acolhedora na rota turística do Pantanal Paulista.",
+      "contato": [],
+      "mapa": "Murutinga do Sul,SP,Brasil"
+    },
+    "nova-independencia": {
+      "nome": "Nova Independência",
+      "slogan": "Santuário Ecológico",
+      "descricao": "Sede de reservas ecológicas e refúgio preservado da fauna e flora associada ao ecossistema regional e ao Parque Estadual do Aguapeí.",
+      "dados": [
+        {
+          "rotulo": "Ecologia",
+          "valor": "Parque Aguapeí"
+        },
+        {
+          "rotulo": "Natureza",
+          "valor": "Preservação"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Parque Estadual do Aguapeí"
+        },
+        {
+          "nome": "Refúgio de Fauna"
+        },
+        {
+          "nome": "Turismo Ecológico"
+        }
+      ],
+      "informacoes": "Destino imperdível para os amantes da contemplação ambiental.",
+      "contato": [],
+      "mapa": "Nova Independência,SP,Brasil"
+    },
+    "pereira-barreto": {
+      "nome": "Estância Turística de Pereira Barreto",
+      "slogan": "A Península Verde",
+      "descricao": "A Estância Turística de Pereira Barreto é considerada um paraíso ecológico com praias, muito sol, ar puro, fauna e flora diversa. Banhada pelo Rio Tietê, é privilegiada com as águas cristalinas, próprias para o banho, pescaria e esportes náuticos. Sua cultura é fortemente ligada aos seus fundadores, imigrantes japoneses, com destaques na culinária, costumes e monumentos da cidade.\n\nSituada no extremo noroeste do Estado de São Paulo, próxima à divisa do estado de Mato Grosso do Sul, a cidade de Pereira Barreto é um dos paraísos que compõe a Região Turística Pantanal Paulista, onde reúne uma infinidade de belezas naturais para quem precisa de descanso, calmaria e lazer.\n\nFundada por imigrantes japoneses, Pereira Barreto ainda guarda fortes traços de seus fundadores, que podem ser facilmente observados na culinária, nos costumes e nos monumentos públicos. Italianos, portugueses, sírios, libaneses também contribuíram significativamente na formação do município.",
+      "dados": [
+        {
+          "rotulo": "Praia",
+          "valor": "Pôr do Sol"
+        },
+        {
+          "rotulo": "Canal",
+          "valor": "9.600 metros"
+        },
+        {
+          "rotulo": "Cultura",
+          "valor": "Go-Ju-No-To"
+        },
+        {
+          "rotulo": "Lazer",
+          "valor": "Stand Up Paddle"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Praia Pôr do Sol",
+          "descricao": "Que Pereira Barreto tem a natureza abençoada, não é novidade! A praia de Pereira Barreto é conhecida na região pela sua bela paisagem, água limpa, areia clarinha e excelente estrutura. Para relaxar ou agitar, uma praia é sempre uma boa ideia!\n\nNa praia há restaurante, sorveteria, playground para as crianças, pista de skate e um grandioso aquário com peixes da região, como o Tucunaré, o Pacu, além de peixes ornamentais, como as carpas. Além disso, a praia ainda possui um estacionamento amplo dentro das dependências.\n\nMas, se o seu lance é churrasco, saiba que no local é possível alugar quiosques completos, com mesa, banco, churrasqueira, pia e energia elétrica. Gostou da praticidade? Então, agora é só desfrutar do cenário!",
+          "detalhes": [
+            {
+              "rotulo": "Entrada",
+              "valor": "Gratuita"
+            },
+            {
+              "rotulo": "Aquário Municipal – de terça a sexta",
+              "valor": "14h às 19h"
+            },
+            {
+              "rotulo": "Aquário Municipal – aos sábados",
+              "valor": "9h às 12h"
+            },
+            {
+              "rotulo": "Aquário Municipal – feriados",
+              "valor": "14h às 19h"
+            }
+          ]
+        },
+        {
+          "nome": "Canal de Pereira Barreto",
+          "descricao": "A cidade possui o segundo maior canal artificial de água doce do mundo. São 9.600 metros de comprimento, 50 metros de largura e 12 metros de profundidade, na cota máxima de montante, e 8 metros na cota mínima. Tem coragem de navegar por essa imensidão de água doce? Se a sua resposta for sim, pode se animar, pois a navegação e a pesca esportiva neste lugar são permitidas."
+        },
+        {
+          "nome": "Museu Histórico da Colonização",
+          "descricao": "Na entrada do museu, há uma arena utilizada para prática de sumô. Também estão expostas uma carroça de tração animal da década de 50, doada pela família Kayama, a máquina a vapor utilizada para recalque de água do poço da Estação Ferroviária de Lussanvira de 1930, e o painel do artista plástico James Kudo, neto de um dos fundadores."
+        },
+        {
+          "nome": "Stand Up Paddle",
+          "descricao": "Se você está em Pereira Barreto e quer fazer algo diferente, esta atividade é para você! Na praia Pôr do Sol é possível praticar a atividade de Stand Up Paddle (SUP). Cada dia mais popular, esse esporte de remo em pé sobre uma prancha originou-se nas Ilhas Havaianas no início dos anos 60. O interessante desta prática é que permite a você um contato direto com a natureza, bem como uma vista do lugar visitado que poucos terão."
+        },
+        {
+          "nome": "Go-Ju-No-To (Templo de Madeira)",
+          "descricao": "O GO-JU-NO-TO foi construído pelo engenheiro Risaburo Murai, e inaugurado em Setembro de 1958, e está localizado na Praça da Bandeira “Comendador Jorge Tanaka”. A torre de cinco andares, também conhecida como Templo de Madeira, representa a hierarquia do governo feudal do Japão."
+        },
+        {
+          "nome": "Pesca Esportiva",
+          "descricao": "Se você é apaixonado por pesca, precisa visitar a cidade!\n\nProcurada por pescadores do mundo todo, a pesca de Tucunaré atrai a Pereira Barreto amantes da pesca de diferentes regiões; de hábitos diurnos, o Tucunaré se alimenta de peixes e camarões. É a única espécie que persegue a presa até capturá-la."
+        },
+        {
+          "nome": "Relojão",
+          "descricao": "O imponente monumento fica no centro da cidade, no cruzamento das ruas Cozo Taguchi e Fauzi Kassin. O Relógio Quatro Faces foi construído em 1958 pelo engenheiro Risaburo Murai, da colônia japonesa, em homenagem ao 30º aniversário do município."
+        }
+      ],
+      "informacoes": "",
+      "contato": [
+        {
+          "rotulo": "Site",
+          "valor": "pereirabarreto.sp.gov.br"
+        }
+      ],
+      "mapa": "Pereira Barreto,SP,Brasil"
+    },
+    "sud-mennucci": {
+      "nome": "Sud Mennucci - Município de Interesse Turístico",
+      "slogan": "Terra do Tucunaré Azul",
+      "descricao": "Banhada em 30km pelas águas límpidas do Rio Tietê, com fauna e flora diversificadas, Sud Mennucci tem sol praticamente o ano inteiro. Reconhecida nacionalmente como \"Terra do Tucunaré\" mantém um obelisco do peixe em sua entrada principal. Já promoveu vários torneios de pesca esportiva e integra o Circuito Pantanal Paulista de Pesca Esportiva.\n\nRepleta de natureza exuberante, é como um pedaço do paraíso na zona urbana. Graças aos vários aspectos: os geográficos, o patrimônio cultural, fauna e flora, a cidade é um dos destinos turísticos bastante procurados do interior e foi reconhecida, recentemente, como Município de Interesse Turístico.",
+      "dados": [
+        {
+          "rotulo": "Rio",
+          "valor": "Tietê (30km)"
+        },
+        {
+          "rotulo": "Evento",
+          "valor": "Tucuna Free"
+        },
+        {
+          "rotulo": "História",
+          "valor": "Fazenda Triunfo"
+        },
+        {
+          "rotulo": "Lazer",
+          "valor": "Parque da Saúde"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Rio Tietê",
+          "descricao": "Na cidade, o Rio Tietê é encontrado limpo e com diversas variedades de peixes.\n\nCom tanta abundância de água, o município vem recebendo investimentos no setor imobiliário com a construção de diversos condomínios às margens do rio ou afluentes. Atualmente, são oferecidos diversos ranchos para locação com infraestrutura de lazer e local para embarque e desembarque de barcos. O turismo fluvial é o mais procurado pelos turistas, pois é possível passear de barco, nadar, pescar e praticar esportes náuticos."
+        },
+        {
+          "nome": "Fauna e Flora",
+          "descricao": "As árvores de médio e grande porte formam uma floresta fechada e densa, possibilitando a existência de uma rica biodiversidade, com a presença de diversas espécies de mamíferos, anfíbios, aves, insetos, peixes e répteis."
+        },
+        {
+          "nome": "Pôr do Sol",
+          "descricao": "Poucas pessoas têm o privilégio de assistir ao pôr do sol numa paisagem de tirar o fôlego como o desta cidade. Os reflexos do sol batem na água, formando lindos e coloridos desenhos que tornam esse momento, inesquecível."
+        },
+        {
+          "nome": "Pesca ao Tucunaré",
+          "descricao": "Quem vem uma vez se apaixona e quer voltar sempre!\n\nO tucunaré é um dos peixes mais cobiçados da América do Sul, atraindo pescadores do mundo inteiro para o Brasil. Por suas características predatórias, a espécie é um sonho de consumo para a maioria dos amantes de pesca esportiva.\n\nEm Sud Mennucci, o peixe é encontrado facilmente. Todos os anos, a cidade sedia o Tucuna Free, um campeonato de pesca esportiva ao tucunaré.\n\nO evento atrai centenas de pessoas de outras cidades e até mesmo de outros estados."
+        },
+        {
+          "nome": "Paróquia Nossa Senhora Aparecida",
+          "descricao": "A Igreja Matriz, representa o principal ponto de devoção dos católicos no município. No local, são realizadas missas, celebrações, batizados, casamentos, terços, e outros eventos religiosos. A igreja é toda forrada por madeira, climatizada e com capacidade para aproximadamente 300 pessoas. É, com toda certeza, um lugar que vale a pena receber sua visita."
+        },
+        {
+          "nome": "Prainha da Areinha",
+          "descricao": "Um lugar perfeito para os amantes da pesca!\n\nEste é um ponto frequentado por turistas que gostam de pesca. Suas águas rasas ajudam no embarque e desembarque dos barcos, como também na pescaria de barranco."
+        },
+        {
+          "nome": "Praça Matriz",
+          "descricao": "É o principal ponto de encontro dos moradores do município, que utilizam a praça para colocar o papo em dia. Um lugar com o clima acolhedor para o visitante sentar, tomar um sorvete e relaxar."
+        },
+        {
+          "nome": "Fazenda Triunfo",
+          "descricao": "Uma das arquiteturas mais charmosas e atraentes da cidade, a fazenda Triunfo era destino de férias da finada apresentadora de TV Hebe Camargo. Sua construção tem mais de 100 anos, sendo uma das fazendas mais antigas da região. A sede é toda de madeira e encanta pela beleza e tamanho. O local permite a chegada de seus visitantes por avião, pois a fazenda possui pista de pouso."
+        },
+        {
+          "nome": "Parque da Saúde",
+          "descricao": "Dentro da cidade, o visitante pode completar a sua viagem aproveitando o espaço no Parque da Saúde. A entrada é gratuita e o espaço conta com quadras de vôlei de areia, vôlei, bocha, basquete, futsal, campo artificial, parque infantil, pista de caminhada, piscinas de biribol e recreativas, banheiros, vestiário com acesso a deficientes físicos e academia ao ar livre."
+        },
+        {
+          "nome": "Quiosque Público Municipal “Recanto das Águas”",
+          "descricao": "Este é um ponto obrigatório a qualquer turista que visita a cidade. O lugar conta com uma ampla estrutura com banheiros, quiosques com churrasqueira, quadra de vôlei de areia, lanchonete, áreas de camping - todos às margens do rio Tietê."
+        }
+      ],
+      "informacoes": "",
+      "contato": [
+        {
+          "rotulo": "Site",
+          "valor": "sudmennucci.sp.gov.br"
+        }
+      ],
+      "mapa": "Sud Mennucci,SP,Brasil"
+    },
+    "suzanapolis": {
+      "nome": "Município de Suzanápolis",
+      "slogan": "Aconchego do Interior",
+      "descricao": "O município se destaca devido às suas belezas naturais e atrativos culturais e religiosos. Tem como um de seus principais símbolos o rio São José dos Dourados que atrai pescadores de todos os cantos do país. Uma cidade encantadora de pequeno porte com uma população acolhedora, com opções de passeio e lazer para toda família.\n\nConsiderada uma das mais graciosas cidades de pequeno porte, Suzanápolis possui cerca de 3 mil habitantes e está localizada na região Noroeste do Estado de São Paulo. Os atrativos naturais, culturais, religiosos e seus eventos que durante o ano atraem milhares de pessoas, fazem da cidade um roteiro obrigatório para a sua viagem!",
+      "dados": [
+        {
+          "rotulo": "Esporte",
+          "valor": "Estádio Gervásio"
+        },
+        {
+          "rotulo": "Aventura",
+          "valor": "110km Trilhas"
+        },
+        {
+          "rotulo": "Natureza",
+          "valor": "Mata da Suzana"
+        },
+        {
+          "rotulo": "Arte",
+          "valor": "Casa de Momentos"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Praça Salvador Ferreira",
+          "descricao": "É a atração turística para quem quer passar um momento tranquilo com a família.\n\nCom o charme peculiar de cidade pequena do interior, a Praça Salvador Ferreira é um ponto de encontro dos moradores. Nela há sempre banquinhos, igreja, jardins e crianças correndo. É a combinação perfeita de lazer e simplicidade."
+        },
+        {
+          "nome": "Igreja Matriz",
+          "descricao": "A Igreja Matriz de Suzanápolis representa o principal ponto de devoção dos católicos no município. No templo são realizadas missas, batizados, celebrações, casamentos, terços, e outros eventos religiosos. A Igreja Matriz também é marcada por ser o local que recebe a chegada dos reis. A igreja é toda forrada por madeira e climatizada com capacidade para aproximadamente 200 pessoas sentadas."
+        },
+        {
+          "nome": "Estádio Municipal Gervásio Durigan",
+          "descricao": "Para os apaixonados por futebol, uma visita ao Estádio Gervásio Durigan é parada obrigatória!\n\nO Estádio Municipal Gervásio Durigan é considerado um dos melhores campos da região e um grande cartão de visita da cidade, sendo um grande marco da história suzanapolense. Por lá, já aconteceram grandes jogos, sendo visitado por personalidades do futebol. É o local onde a equipe do Esporte Clube Treze de Junho usa como mandante de suas partidas."
+        },
+        {
+          "nome": "Trilhas Rurais",
+          "descricao": "Pra quem gosta de emoção e aventura.\n\nA cidade possui aproximadamente 110km de estradas rurais não pavimentadas, proporcionando assim para os amantes do Mountain Bike, Motocross, caminhada e corrida, uma trilha alternativa “fora de pista”. Para quem gosta de mais aventura, é possível fazer uma caminhada no meio da Mata da Suzana, onde aproximadamente 2000 hectares servem de abrigo para nossa fauna e flora, escondendo belezas naturais e muita adrenalina."
+        },
+        {
+          "nome": "Eventos",
+          "descricao": "O vasto calendário de eventos do município movimenta o turismo na localidade, que possui diversas manifestações culturais, de caráter local e de grande notoriedade regional, exibidas através de eventos que resgatam as tradições da localidade."
+        },
+        {
+          "nome": "Casa de Momentos",
+          "descricao": "A Casa de Momentos é uma propriedade privada de posse do artista Antônio Carvalho dos Santos, o popular Nenzinho. O local é aberto para visitação. O próprio artista recebe os convidados, explica sobre suas obras expostas e sobre a Casa em si, que é toda feita com materiais recicláveis.\n\nA Casa é tão impressionante, que algumas emissoras de televisão do país estiveram no local para conhecerem e entrevistarem o artista.\n\nA Casa é surpreendente e, em cada canto, encontra-se uma grande surpresa."
+        }
+      ],
+      "informacoes": "",
+      "contato": [
+        {
+          "rotulo": "Site",
+          "valor": "suzanapolis.sp.gov.br"
+        }
+      ],
+      "mapa": "Suzanápolis,SP,Brasil"
+    },
+    "valparaiso": {
+      "nome": "Valparaíso",
+      "slogan": "Aventura e Praças",
+      "descricao": "Trilhas de moto, fortes traços de cultura oriental e a aprazível Praça Matriz com fonte luminosa, além de castelo bonsai e muita hospitalidade.",
+      "dados": [
+        {
+          "rotulo": "Lazer",
+          "valor": "Praça Matriz"
+        },
+        {
+          "rotulo": "Aventura",
+          "valor": "Trilhas"
+        }
+      ],
+      "destaques": [
+        {
+          "nome": "Praça Matriz e Fonte Luminosa"
+        },
+        {
+          "nome": "Trilhas de Moto e Bicicleta"
+        },
+        {
+          "nome": "Cultura Oriental"
+        }
+      ],
+      "informacoes": "Parada obrigatória no roteiro turístico do Extremo Noroeste Paulista.",
+      "contato": [],
+      "mapa": "Valparaíso,SP,Brasil"
+    }
+  }
+}
